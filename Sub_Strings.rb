@@ -4,10 +4,10 @@ require 'pry-byebug'
 dictionary = ["below","down","go", "horn", "going","horn","how","howdy","it","i","low","own","part","partner","sit"]
 
 
-dictionary.reduce(Hash.new(0)) do |result, vote|
-  result[vote] += 1
-  p result
-end
+# dictionary.reduce(Hash.new(0)) do |result, vote|
+#   result[vote] += 1
+#   p result
+# end
 
 # # need to add dictionary array to input array and then run reduce method on both to figure
 #  out the number of like strings
@@ -16,8 +16,19 @@ end
 # # need to figure out how to identify substrings--perhaps by using string.to_a method
 #  and vice versa. 
 
-def sub_string (x)
-  value = x
+def sub_strings(x, dictionary)
+  word_array = new_strings(x)
+  combined_array = word_array + dictionary
+  combined_array .reduce(Hash.new(0)) do |result, vote|
+    result[vote] += 1
+    p result
+  end
+end 
+
+
+def new_strings (x)
+  value = x.join('')
+  
 # Get substring at indexes 0 through 3.
 # ... This is the first 4 characters.
   first_part = value[0..3]
@@ -27,6 +38,7 @@ def sub_string (x)
   last_part = value[3..-1]
 
   new_array = [first_part, second_part, last_part]
-
-  print new_array
+  return new_array
 end
+
+sub_strings('hello, how are you!', dictionary)
