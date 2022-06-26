@@ -18,7 +18,7 @@ dictionary = ["below","down","go", "horn", "going","horn","how","howdy","it","i"
 
 def sub_strings(x, dictionary)
   word_array = new_strings(x)
-  combined_array = word_array + dictionary
+  combined_array = word_array + dictionary  
   combined_array .reduce(Hash.new(0)) do |result, vote|
     result[vote] += 1
     p result
@@ -27,17 +27,26 @@ end
 
 
 def new_strings (x)
-  value = x.join('')
-  
+
+  # remove all special characters from words 
+  words = x.delete('^a-zA-Z0-9')
+  # find way to keep spaces, so that you can then create 
+  # an array to add to the original dictionary array and then sort for unique valuesß
+
+  new_array = x.split()
+  y = x.delete ',' '!' 
+  value = y.split(/ /)
 # Get substring at indexes 0 through 3.
 # ... This is the first 4 characters.
-  first_part = value[0..3]
+  first_part = value[0..4].join()
 # Get substring at indexes 2 through 3.
-  second_part = value[2..3]
+  second_part = value[1..3].join()
 # Get substring past index 3 through end of string.
-  last_part = value[3..-1]
-
-  new_array = [first_part, second_part, last_part]
+  last_part = value[-3..-1].join()
+# need to find a way to only return those values that are duplicated in the original dictionary
+# not the newest_array below. should only return the number of times the original phrase appears, and that 
+# phrases subsctrings. how many times they appear in the original dictionary  
+  newest_array = new_array +[first_part, second_part, last_part]
   return new_array
 end
 
