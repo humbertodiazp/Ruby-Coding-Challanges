@@ -27,15 +27,13 @@ end
 
 
 def new_strings (x)
-
-  # remove all special characters from words 
-  words = x.delete('^a-zA-Z0-9')
-  # find way to keep spaces, so that you can then create 
+  # create array from input
+  words = x.split
+  # create new array and remove all special characters from words while leaving blank spaces
+  new_array = words.map {|word| word.delete('^a-zA-Z0-9')}
   # an array to add to the original dictionary array and then sort for unique valuesß
 
-  new_array = x.split()
-  y = x.delete ',' '!' 
-  value = y.split(/ /)
+  value = new_array.join('')
 # Get substring at indexes 0 through 3.
 # ... This is the first 4 characters.
   first_part = value[0..4].join()
@@ -46,7 +44,7 @@ def new_strings (x)
 # need to find a way to only return those values that are duplicated in the original dictionary
 # not the newest_array below. should only return the number of times the original phrase appears, and that 
 # phrases subsctrings. how many times they appear in the original dictionary  
-  newest_array = new_array +[first_part, second_part, last_part]
+  newest_array = new_array + [first_part, second_part, last_part]
   return new_array
 end
 
