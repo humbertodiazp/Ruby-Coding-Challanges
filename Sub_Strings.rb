@@ -29,7 +29,7 @@ def new_strings (x)
   # create array from input
   words = x.split
   # create new array and remove all special characters from words while leaving blank spaces
-  new_array = words.map {|word| word.delete('^a-zA-Z0-9')}
+  new_array = words.map {|word| word.delete('^a-zA-Z')}
   # an array to add to the original dictionary array and then sort for unique valuesß
  p new_array
   value = new_array.join('')
@@ -48,5 +48,6 @@ def new_strings (x)
   return newest_array
 end
 
-sub_strings('hello, how are you!', dictionary)
+sub_strings('hello, how are you. there is now @ 2 o;clock a doctor around 45 st london!', dictionary)
 
+ 
