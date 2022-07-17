@@ -24,12 +24,14 @@ class Account
     end
   
     def withdraw(pin_number, amount)
-    puts amount < @balance ? "": deposit_error 
-    puts pin_number == pin && amount < @balance ? 
-    "Withdrew #{amount}. New balance: $#{@balance -= amount}." : pin_error
-    end
+      puts amount < @balance ? "": deposit_error 
+     abort 'Try a different amount.' 
+      puts pin_number == pin && amount < @balance ? 
+      "Withdrew #{amount}. New balance: $#{@balance -= amount}." : pin_error
+      end
+    
   
-  def deposit_error
+  def withdrawl_error
     return "The maximum you are able to withdraw is $#{@balance}"
   end
   
