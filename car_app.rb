@@ -37,9 +37,17 @@ class MyCar
         return @color 
     end 
 
+    # Add a class method to your MyCar class that calculates 
+    # the gas mileage of any car. Not just an instance object 
+
+    def self.gas_mileage(gallons, miles)
+        puts "#{miles/gallons} miles per gallon of gas"
+    end
+
     def to_s
         "This is a brand new #{@year} #{@model} in #{@color}."
     end
+
 end
   
 my_whip = MyCar.new(2022, "Camry", "White")
@@ -54,7 +62,7 @@ puts my_whip.current_speed
 
 puts my_whip.spray_paint('orange')
 
-puts my_whip.color
+puts my_whip.gas_mileage
 
 
 
