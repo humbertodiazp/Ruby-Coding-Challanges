@@ -1,4 +1,9 @@
-class MyCar
+class Vehicle 
+    
+end
+
+
+class MyCar < Vehicle
     attr_accessor :color
     attr_reader :year, :make
 
