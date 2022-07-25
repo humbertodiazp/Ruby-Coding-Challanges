@@ -1,19 +1,25 @@
 class Vehicle 
-    
-end
+    class number_of_children
+        def initialize()
+            puts Vehicle.children
+        end
+    end
 
 
-class MyCar < Vehicle
     attr_accessor :color
-    attr_reader :year, :make
+    attr_reader :year
 
     def initialize(year, model, color )
         @year = year
         @model = model
         @color = color
         @current_speed = 0
+        @make = make 
+        @type = type
       end
-    
+      
+  
+
     def speed_up(number)
         @current_speed += number
         puts "You push the gas and accelerate #{number} mph."
@@ -54,20 +60,57 @@ class MyCar < Vehicle
     end
 
 end
+
+
+class MyCar < Vehicle
+    
+    VEHICLE_ID = "A1SU@C3"
+
+    def initialize(make, type)
+        self.make = make 
+        self.type = type
+    end 
+
+    
+
+end
+
+class MyTruck < Vehicle
+    VEHICLE_ID = "BBQ&BFL0"
+    def initialize(make, type)
+        self.make = make 
+        self.type = type
+    end 
+end 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-my_whip = MyCar.new(2022, "Camry", "White")
+# my_whip = MyCar.new(2022, "Camry", "White")
 
-puts my_whip
+# puts my_whip
 
-puts my_whip.color 
+# puts my_whip.color 
 
-puts my_whip.speed_up(20)
-puts my_whip.brake(10)
-puts my_whip.current_speed
+# puts my_whip.speed_up(20)
+# puts my_whip.brake(10)
+# puts my_whip.current_speed
 
-puts my_whip.spray_paint('orange')
+# puts my_whip.spray_paint('orange')
 
-puts my_whip.gas_mileage
+# puts my_whip.gas_mileage
 
 
 
