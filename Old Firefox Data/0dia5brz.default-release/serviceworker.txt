@@ -1,0 +1,13 @@
+9
+
+https://www.betonline.ag/bol/vendors/xp/
+https://www.betonline.ag/bol/vendors/xp/service-worker.js?v=2.1.5&id=568450235&key=3K4SZYcbSwo82fhkYkmEtcDub-CwlTfx&app_key=1eWsiALDRXs2l3kEUTuPYzskP24ydMW-&backend_url=https%3A%2F%2Fapi.xtremepush.com&ref=https%3A%2F%2Fprod.webpu.sh%2F1eWsiALDRXs2l3kEUTuPYzskP24ydMW-%2Fservice-worker-source.js%3Fv%3D2.1.5
+false
+{fc00f79f-6148-49aa-94c5-447861f6d158}
+0
+1666468173152117
+1666468174099847
+1666468172353219
+0
+true
+#
